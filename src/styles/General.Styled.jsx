@@ -7,11 +7,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.columnBased ? "column" : "row")};
   padding: 0 2rem;
   text-align: center;
-`;
 
+  ${(props) => props.theme.media.mobile} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.text};

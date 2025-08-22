@@ -1,16 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
-import Provider from "./context/index.jsx"; // wraps ThemeContextProvider
+import App from "./App";
+import Provider from "./context";
+import { ModalContextProvider } from "./context/ModalContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider>
-        <App />
+        <ModalContextProvider>
+          <App />
+        </ModalContextProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
+
 

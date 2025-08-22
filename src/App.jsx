@@ -8,14 +8,30 @@ import { lightTheme, darktheme } from "./styles/theme";
 import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import Header from "./components/Header/Header";
+// import { ModalContext } from "./context/ModalContext";
 
+// export const Test = ({ handleModal }) => {
+//   return (
+//     <div>
+//       <button
+//         onClick={() => handleModal(<Modal handleModal={handleModal} />)}
+//       >Show Modal</button>
+//     </div>
+//   );
+// };
+
+// export const Modal = ({ handleModal }) => {
+//   return <div>ygsdzzyub\vgfzgzsdgbdkzybgz</div>;
+// };
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
+  // const {handleModal} = useContext(ModalContext)
 
   const mode = theme === "light" ? lightTheme : darktheme;
   return (
     <ThemeProvider theme={mode}>
+      {/* <Test handleModal={handleModal}/> */}
       <GlobalStyle />
       <Header />
       <Routes>
